@@ -1,4 +1,4 @@
-package com.helpmefrog.game.actors;
+package com.helpmefrog.game.scene2d;
 
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
