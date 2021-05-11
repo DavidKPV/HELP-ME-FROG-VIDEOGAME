@@ -1,4 +1,4 @@
-package com.helpmefrog.game;
+package com.helpmefrog.game.box2d;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
@@ -14,6 +14,8 @@ import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
+import com.helpmefrog.game.BaseScreen;
+import com.helpmefrog.game.HelpMeFrogGame;
 
 public class Box2DScreen extends BaseScreen {
 
@@ -96,6 +98,13 @@ public class Box2DScreen extends BaseScreen {
         frog = world.createBody(createFrogBodyDef());
         floor = world.createBody(createFloorBodyDef());
         tip = world.createBody(createTipBodyDef(6f));
+
+        // CREAMOS LA FIGURA EN DONDE ESTARÁ LA FIXTURE PARA QUE SE PUEDA VISUALIZAR
+        // EL PERSONAJE DENTRO DEL VIDEOJUEGO
+        PolygonShape frogShape = new PolygonShape();
+        frogShape.setAsBox(0.5f, 0.5f); // MEDIDAS EN METROS
+        frogfixture = frog.createFixture(frogShape, 3);
+        frogShape.dispose();
 
 
         // CREAMOS EL FIXTURE DEL SUELO PARA QUE SE PUEDA OBSERVAR
@@ -183,7 +192,7 @@ public class Box2DScreen extends BaseScreen {
         // OBTENEMOS LA VELOCIDAD EN Y QUE MANEJA EL SALTO PARA QUE SE VEA PROPORCIONAL
         if(isLiveFrog) {
             float velicityY = frog.getLinearVelocity().y;
-            frog.setLinearVelocity(8, velicityY);
+            frog.setLinearVelocity(3, velicityY);
         }
 
 
@@ -200,6 +209,6 @@ public class Box2DScreen extends BaseScreen {
     // MÉTODO QUE REALIZARÁ LOS SALTOS DEL PERSONAJE
     private void jumpFrog(){
         Vector2 position = frog.getPosition();
-        frog.applyLinearImpulse(0, 6, position.x, position.y, true);
+        frog.applyLinearImpulse(0, 20, position.x, position.y, true);
     }
 }
