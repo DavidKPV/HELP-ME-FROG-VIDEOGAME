@@ -17,6 +17,8 @@ public class HelpMeFrogGame extends Game {
 	// REGISTRAMOS TODAS LAS PANTALLAS QUE HAYAMOS HECHO DEL VIDEOJUEGO PARA QUE SE PUEDAN MANIPULAR
 	public GameScreen gameScreen;
 	public GameOverScreen gameOverScreen;
+	public GameMainScreen gameMainScreen;
+	public LoadingScreen loadingScreen;
 
 	// CONSTRUCTOR
 	public AssetManager getAssetManager() {
@@ -34,16 +36,23 @@ public class HelpMeFrogGame extends Game {
 		assetManager.load("pasture.png", Texture.class);
 		assetManager.load("wood.png", Texture.class);
 		assetManager.load("game_over.png", Texture.class);
+		assetManager.load("frog_crash.png", Texture.class);
+		assetManager.load("main_game.png", Texture.class);
+		assetManager.load("name_game.png", Texture.class);
 		assetManager.load("audio/help-me-frog_song.ogg", Music.class);
 		assetManager.load("audio/die.mp3", Sound.class);
 		assetManager.load("audio/jump.mp3", Sound.class);
-		assetManager.finishLoading();
 
+		// INSTANCIAMOS PRIMERO LA VENTANA DE CARGA PARA EVITAR QUE SE ROMPA EL VIDEOJUEGO
+		loadingScreen = new LoadingScreen(this);
+		setScreen(loadingScreen);
+	}
+
+	public void finishLoading(){
 		// INSTANCIAMOS LAS VENTANAS DEL VIDEOJUEGO
 		gameScreen = new GameScreen(this);
 		gameOverScreen = new GameOverScreen(this);
-
-		setScreen(gameOverScreen);
+		gameMainScreen = new GameMainScreen(this);
+		setScreen(gameMainScreen);
 	}
-
 }

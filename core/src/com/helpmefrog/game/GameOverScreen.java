@@ -11,8 +11,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
-import org.graalvm.compiler.phases.common.NodeCounterPhase;
-
 public class GameOverScreen extends BaseScreen {
     // UTILIZANDO SCENE2D UI
 
@@ -43,10 +41,10 @@ public class GameOverScreen extends BaseScreen {
         });
 
 
-        // CENTRAMO EL BOTÓN A LA MITAD
+        // CENTRAMO EL "GAME OVER" A LA MITAD
         gameover.setPosition(320- gameover.getWidth() / 2, 320 - gameover.getHeight());
         // COLOCAMOS EL TAMAÑO AL BOTÓN
-        tbRetry.setSize(200, 100);
+        tbRetry.setSize(200, 70);
         tbRetry.setPosition(220, 50);
 
         // AGREGAMOS EL BOTÓN Y EL GAME OVER AL STAGE
@@ -55,7 +53,7 @@ public class GameOverScreen extends BaseScreen {
     }
 
     // DENTRO DEL MÉTODO SHOW DEBE DE ESTAR EL PROCESADOR DE ENTRADA PARA QUE EL BOTÓN DE REINTENTAR
-    // TENGA ACCIÓN DE REINICIAR EL JUEGO (SOLO SE MESTRE LA ACCIÓN DE CLIC)
+    // TENGA ACCIÓN DE REINICIAR EL JUEGO (SOLO SE MUESTRE LA ACCIÓN DE CLIC)
     @Override
     public void show() {
         Gdx.input.setInputProcessor(stage);
@@ -71,6 +69,7 @@ public class GameOverScreen extends BaseScreen {
     @Override
     public void dispose() {
         stage.dispose();
+        skin.dispose();
     }
 
     // PARA MOSTRAR TODO LO CREADO

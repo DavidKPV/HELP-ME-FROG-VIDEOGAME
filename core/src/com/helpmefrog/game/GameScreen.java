@@ -34,7 +34,7 @@ public class GameScreen extends BaseScreen {
 
     // PISO Y TRAMPAS
     private List<FloorEntity> floor = new ArrayList<FloorEntity>();
-    private List<TrapEntity> trap = new ArrayList<>();
+    private List<TrapEntity> trap = new ArrayList<TrapEntity>();
 
     // DECLARAMOS LOS SONIDOS DE ACCIONES
     private Sound jumpSound, dieSound;
