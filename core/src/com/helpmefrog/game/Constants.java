@@ -9,6 +9,8 @@ public class Constants {
         EN DONDE 1 METRO EQUIVALE A 90 PIXELES
      */
 
-    public static final float PIXELS_IN_METER = 90f;
+    public static final float PIXELS_IN_METER = 55f;
+    public static final int IMPULSE_JUMP = 24;
+    public static final float SPEED_GAME = 5f;
 
 }
