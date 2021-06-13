@@ -1,6 +1,6 @@
 ## **VIDEOJUEGO HELP ME FROG**
 
-![Videogame Help me frog](game_icon.png)
+![Videogame Help me frog](data_readme/game_icon.png)
 
 ### Introducción
 
@@ -18,19 +18,19 @@ Los resultados hasta el momento son los siguientes:
 
 - Ventana carga de elementos
 
-![Ventana de carga - Help me frog](loading_screen.jpg)
+![Ventana de carga - Help me frog](data_readme/loading_screen.jpg)
 
 - Ventana principal
 
-![Ventana de Inicio - Help me frog](main_screen.jpg)
+![Ventana de Inicio - Help me frog](data_readme/main_screen.jpg)
 
 - Nivel 1
 
-![Nivel 1 - Help me frog](game_screen.jpg)
+![Nivel 1 - Help me frog](data_readme/game_screen.jpg)
 
 - Ventana Game Over
 
-![Ventana de game over - Help me frog](game_over_screen.jpg)
+![Ventana de game over - Help me frog](data_readme/game_over_screen.jpg)
 
 #### **NOTAS**
 
